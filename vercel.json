@@ -5,7 +5,7 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/(?!image/|public/|.*\\.)",
+      "source": "/(?!image/|.*\\.)",
       "destination": "/index.html"
     }
   ]
