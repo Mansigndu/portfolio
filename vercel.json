@@ -3,9 +3,26 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/image/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/image/:path*",
+      "destination": "/public/image/:path*"
+    }
+  ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/(?!image|public|.*\\.)",
       "destination": "/index.html"
     }
   ]
