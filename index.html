@@ -15,7 +15,7 @@
         <span class="text-[40px]"><a href="#home"><img src="/public/image/msLOGO.png" class="my-3" alt="Mansi Saini" width="100"></a>
         </span>
         <nav class="h-[10vh] w-auto md:w-[50%] list-none flex text-gray-300 items-center justify-between md:justify-evenly">
-            <ul id="mobileMenu" class="hidden lg:flex gap-10 absolute lg:static top-[10vh] left-0 right-0 flex-col lg:flex-row bg-gray-900 lg:bg-transparent w-full lg:w-auto p-6 lg:p-0">
+            <ul id="mobileMenu" class="hidden lg:flex gap-10 absolute lg:static top-[10vh] left-1\/2 lg:left-0 transform -translate-x-1\/2 flex-col lg:flex-row bg-gray-900 lg:bg-transparent w-[60%] lg:w-auto max-w-xs lg:max-w-none p-6 lg:p-0">
             <li><a href="#home" class="hover:border-b-2 hover:border-[#d18877] cursor-pointer">Home</a></li>
             <li><a href="#services" class="hover:border-b-2 hover:border-[#d18877] cursor-pointer">Services</a></li>
             <li><a href="#about" class="hover:border-b-2 hover:border-[#d18877] cursor-pointer">About Me</a></li>
@@ -130,7 +130,7 @@
            </div>
         </section> 
         <!--section5 start-->
-        <section id="contact" class="h-auto py-10 flex flex-col items-center justify-center px-4 md:px-8">
+        <!-- <section id="contact" class="h-auto py-10 flex flex-col items-center justify-center px-4 md:px-8">
     <h1 class="text-[#d18877] text-[40px] mb-4">Contact Me</h1>
     <p class="text-white text-center text-[18px] max-w-2xl mb-8">
         I’m always excited to work on new projects! Whether it’s a website, app, or freelance collaboration, 
@@ -152,7 +152,7 @@
             </button>
         </div>
     </form>
-</section>
+</section> -->
 
         
         <!--section5 end-->
@@ -176,9 +176,9 @@
                 <!-- WhatsApp icon added -->
                 <a href="https://wa.me/918195020772" target="_blank"><i class="ri-whatsapp-line cursor-pointer hover:text-white"></i></a>
             </div>
-            <div class="text-white flex gap-10 p-4  border-b-2 border-[#d18877]">
+            <div class="text-white flex flex-col md:flex-row gap-10 p-4  border-b-2 border-[#d18877]">
            
-                <div>
+                <div class=" ">
             <i class="ri-mail-line text-[#d18877]"></i>
             mansi.saini2412@gmail.com
                 </div>
@@ -213,6 +213,14 @@
             link.addEventListener('click', function() {
                 mobileMenu.classList.add('hidden');
             });
+        });
+
+        // Hide mobile menu when the user scrolls (useful on phones)
+        window.addEventListener('scroll', function() {
+            // only run on narrow screens (optional but avoids flicker on desktop)
+            if (window.innerWidth < 1024) {
+                mobileMenu.classList.add('hidden');
+            }
         });
     </script>
 </body>
